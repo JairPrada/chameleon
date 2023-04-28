@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { SketchPicker } from 'react-color';
 
 function App() {
+  const [state, setState] = useState({ background: '#fff' })
+
+  const handleChangeComplete = (color) => {
+    console.log(color.rgb);
+    setState({ background: color.hex });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg" style={{ background: state.background }}>
+      <h1 className='text'>Chameleon</h1>
+      <div
+
+        style={{ position: "absolute", top: "0", left: "0" }}
+      >
+        <SketchPicker
+          color={state.background}
+          onChange={handleChangeComplete}
+        />
+      </div>
     </div>
   );
 }
