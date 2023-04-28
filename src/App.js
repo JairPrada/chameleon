@@ -1,28 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { SketchPicker } from 'react-color';
+import { neuralNetwork } from './utils';
+import { Loader } from './components/loaders';
 
 function App() {
-  const [state, setState] = useState({ background: '#fff' })
+  const [state, setState] = useState({ background: '#417505', textColor: "white" })
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChangeComplete = (color) => {
-    console.log(color.rgb);
-    setState({ background: color.hex });
+    setState({ background: color.hex, textColor: neuralNetwork(color.rgb.r, color.rgb.g, color.rgb.b) });
   };
 
-  return (
-    <div className="bg" style={{ background: state.background }}>
-      <h1 className='text'>Chameleon</h1>
-      <div
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3000)
+  }, [])
 
-        style={{ position: "absolute", top: "0", left: "0" }}
-      >
-        <SketchPicker
-          color={state.background}
-          onChange={handleChangeComplete}
-        />
-      </div>
-    </div>
+
+  return (
+    <>
+      {isLoading && <Loader />}
+      <div className="bg" style={{ background: state.background }}>
+        <h1 className='text' style={{ color: state.textColor }}>Chameleon</h1>
+        <div style={{ position: "absolute", bottom: "0", right: "0" }}>
+          <SketchPicker
+            color={state.background}
+            onChange={handleChangeComplete}
+          />
+        </div>
+      </div >
+    </>
   );
 }
 
