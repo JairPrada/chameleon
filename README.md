@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Proyecto Chameleon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es un proyecto en React que utiliza la biblioteca de Brain.js para crear una red neuronal que predice el color del texto adecuado (blanco o negro) en función del color de fondo seleccionado en la página. Además, la aplicación permite al usuario seleccionar un color de fondo utilizando un selector de colores.
 
-## Available Scripts
+Puedes ver una versión en línea de esta aplicación en Vercel: https://chameleon-omega.vercel.app/
 
-In the project directory, you can run:
+## Tecnologías y librerías utilizadas
 
-### `npm start`
+Las principales tecnologías y librerías utilizadas en este proyecto son:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React: Una biblioteca de JavaScript para crear interfaces de usuario.
+- Brain.js: Una biblioteca de JavaScript para redes neuronales.
+- Lottie: Una biblioteca de JavaScript para animaciones SVG.
+- React-Color: Una biblioteca de React para selección de colores.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cómo funciona la aplicación
 
-### `npm test`
+La aplicación consta de dos componentes principales: el selector de colores y el área de vista previa. El usuario puede seleccionar un color utilizando el selector de colores, y el área de vista previa muestra cómo se verá el color seleccionado como fondo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La aplicación utiliza useEffect para observar los cambios en el color de fondo y llamar a una función que ejecuta la red neuronal de Brain.js. Esta función predice si el color del texto debe ser blanco o negro en función del color de fondo seleccionado.
 
-### `npm run build`
+## Cómo ejecutar la aplicación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para ejecutar la aplicación en tu máquina local, sigue estos pasos:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clona este repositorio a tu máquina local.
+2. Abre la carpeta del repositorio en tu terminal.
+3. Instala las dependencias de la aplicación utilizando `npm install`.
+4. Ejecuta la aplicación utilizando `npm start`.
+5. Abre un navegador web y visita `http://localhost:3000` para ver la aplicación en acción.
